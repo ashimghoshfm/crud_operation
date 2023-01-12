@@ -69,7 +69,7 @@ def update(request, id):
 def edit(request, id):
     crs = Course.objects.get(id=id)
     form = CourseForm(instance = crs)
-    return render(request, 'courseapp/update.html', {"form":form})
+    return render(request, 'courseapp/update.html', {"form":form, 'crs':crs})
 
 
 

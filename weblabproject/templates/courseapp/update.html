@@ -10,22 +10,28 @@
 </head>
 <body>
  
-    <!-- <p>Course ID: {{ forms.course_id }}</p>
-    <p>Course Name: {{ forms.course_credit }}</p>
-    <p>Course Credit: {{ forms.ct_full_marks }}</p>
-    <p>Attendence Full Marks: {{ forms.att_full_marks}}</p>
-    <p>Final Full Marks: {{ forms.final_full_marks }}</p> -->
+    
 
     <div class="container">
         <div class="row">
             <div class="col-4"></div>
             <div class="col-4">
-            <h1 class="text-center">Update Page</h1>
+            <h1 class="text-center">Update Data</h1>
             
             <!-- <form method="post" action="" class=""> -->
-            <form method="post" action="" class="">
+            <!-- <form method="post" action="" class=""> -->
+            <form method="post" action="{% url 'update' crs.id %}" class="">
                 {% csrf_token %} 
                 {{form.as_p}}
+
+                <!-- <p>Course ID: {{ form.course_id }}</p>
+                <p>Course Name: {{ form.course_name }}</p>
+                <p>Course Credit: {{ form.course_credit }}</p>
+                <p>CT Full Marks: {{ form.ct_full_marks}}</p>
+                <p>Attendence Full Marks: {{ form.att_full_marks}}</p>
+                <p>Final Full Marks: {{ form.final_full_marks }}</p> -->
+
+
                 <input type="submit" value="Update Data" class="btn btn-success">
                 <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
             </form> 

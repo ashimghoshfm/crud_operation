@@ -32,10 +32,28 @@ def save(request):
 
 
 
-def edit(request,id):
-    crs = Course.objects.get(id=id)
-    crs = CourseForm(instance = crs)
-    return render(request,'courseapp/update.html', {'form':crs})
+# def edit(request,id):
+#     crs = Course.objects.get(id=id)
+#     crs = CourseForm(instance = crs)
+#     return render(request,'courseapp/update.html', {'form':crs})
+
+# def update(request, id): 
+#     if request.method == "POST":  
+#         # course = get_object_or_404(Course, pk=id)
+#         crs = Course.objects.get(id=id)
+#         form = CourseForm(request.POST, instance = crs)  
+#         if form.is_valid():  
+#             form.save()  
+#             # return HttpResponseRedirect("/courseapp/")
+#             return redirect(home) 
+#     else:
+#         # course = get_object_or_404(Course, pk=id)
+#         crs = Course.objects.get(id=id)
+#         form = CourseForm(instance = crs)
+#         # print(form) #terminal console e ki return kore, dekhar jonno
+#     return render(request, 'courseapp/update.html', {"form":form})
+
+
 
 def update(request, id): 
     if request.method == "POST":  
@@ -46,12 +64,13 @@ def update(request, id):
             form.save()  
             # return HttpResponseRedirect("/courseapp/")
             return redirect(home) 
-    else:
-        # course = get_object_or_404(Course, pk=id)
-        crs = Course.objects.get(id=id)
-        form = CourseForm(instance = crs)
-        # print(form) #terminal console e ki return kore, dekhar jonno
+            
+            
+def edit(request, id):
+    crs = Course.objects.get(id=id)
+    form = CourseForm(instance = crs)
     return render(request, 'courseapp/update.html', {"form":form})
+
 
 
 # def update(request, id): 

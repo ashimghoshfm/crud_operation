@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+ 
+    <!-- <p>Course ID: {{ forms.course_id }}</p>
+    <p>Course Name: {{ forms.course_credit }}</p>
+    <p>Course Credit: {{ forms.ct_full_marks }}</p>
+    <p>Attendence Full Marks: {{ forms.att_full_marks}}</p>
+    <p>Final Full Marks: {{ forms.final_full_marks }}</p> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+            <h1 class="text-center">Update Page</h1>
+            
+            <!-- <form method="post" action="" class=""> -->
+            <form method="post" action="update" class="">
+                {% csrf_token %} 
+                {{form.as_p}}
+                <input type="submit" value="Update Data" class="btn btn-success">
+                <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+            </form> 
+
+
+
+        </div>
+            <div class="col-4"></div>
+    </div>
+        
+        
+    </div>
+    
+
+
+
+
+
+    
+
+
+</body>
+</html>

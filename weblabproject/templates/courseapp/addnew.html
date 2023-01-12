@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Add New Course</h1>
+        <form method="post" action="{% url 'save' %}" class="">
+            {% csrf_token %}
+    
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <td>Enter Course ID: </td>
+                        <td>{{ cform.course_id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter Course Name: </td>
+                        <td>{{ cform.course_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter Course Credit: </td>
+                        <td>{{ cform.course_credit}}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter CT Full Marks: </td>
+                        <td>{{ cform.ct_full_marks }}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter Attendence Full Marks: </td>
+                        <td>{{ cform.att_full_marks }}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter Final Full Marks: </td>
+                        <td>{{ cform.final_full_marks }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Save" class="btn btn-primary float-start ">
+    
+            
+            
+        </form>
+    </div>
+    
+
+    <script src=""></script>
+</body>
+</html>
